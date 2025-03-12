@@ -1,9 +1,3 @@
-# Node.js (for Vue.js)
-myrabbithole/node_modules/
-myrabbithole/dist/
-myrabbithole/.env
-myrabbithole/package-lock.json
-
 # Python (for Django)
 wonderland/venv/
 wonderland/__pycache__/
