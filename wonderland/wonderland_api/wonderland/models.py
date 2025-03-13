@@ -5,7 +5,7 @@ class contact(models.Model):
   #title
   name = models.CharField(max_length = 100) # name
   email = models.EmailField(unique=True) # email
-  description = models.TextField(blank = True, null = True) # description 
+  message = models.TextField(blank = True, null = True) # description 
   created_at = models.DateTimeField(auto_now_add = True) # created_at 
 
   def __str__ (self): 
@@ -19,5 +19,18 @@ class education(models.Model):
   duration = models.CharField(max_length = 100) # duration 
   image = models.URLField(max_length=200, blank=True, null=True) # image URL field 
   name = models.CharField(max_length = 100) # name
-  position = models.CharField(max_length = 100) # duration
+  position = models.CharField(max_length = 100) # position
   link = "Related Projects" 
+
+  def __str__(self):
+    return self.title
+
+class experience(models.Model):
+  date = models.CharField(max_length = 100) # date
+  title = models.CharField(max_length = 250) # title
+  company = models.CharField(max_length = 100) # company
+  description = models.JSONField(default = list) # description (list format)
+  location = models.CharField(max_length = 100) # location
+
+  def __str__(self):
+    return self.company
