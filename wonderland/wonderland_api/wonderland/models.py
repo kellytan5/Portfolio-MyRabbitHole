@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class contact(models.Model):
+class Contact(models.Model):
   #title
   name = models.CharField(max_length = 100) # name
   email = models.EmailField(unique=True) # email
@@ -12,7 +12,7 @@ class contact(models.Model):
     # return the contact name 
     return self.name 
 
-class education(models.Model):
+class Education(models.Model):
   title = models.CharField(max_length = 200) # title
   description = models.CharField(max_length = 200) # description
   location = models.CharField(max_length = 100) # location
@@ -25,7 +25,7 @@ class education(models.Model):
   def __str__(self):
     return self.title
 
-class experience(models.Model):
+class Experience(models.Model):
   date = models.CharField(max_length = 100) # date
   title = models.CharField(max_length = 250) # title
   company = models.CharField(max_length = 100) # company
@@ -34,3 +34,22 @@ class experience(models.Model):
 
   def __str__(self):
     return self.company
+
+# Projects model
+class Project(models.Model):
+  title = models.CharField(max_length = 200) # title
+  description = models.CharField(max_length = 1000) # description
+  conclusion = models.CharField(max_length = 200) # conclusion 
+  location = models.CharField(max_length = 100) # location
+  duration = models.CharField(max_length = 100) # duration 
+  position = models.CharField(max_length = 100) # position 
+  github = models.URLField(max_length=200, blank=True, null=True) # github URL field
+  figma = models.URLField(max_length=200, blank=True, null=True) # figma URL field 
+
+  def __str__(self):
+    return self.title
+
+class ProjectImage(models.Model):
+  project = models.ForeignKey(Project, related_name="images", on_delete=models.CASCADE)
+  image = models.ImageField(upload_to="project_images/")
+  uploaded_at = models.DateTimeField(auto_now_add=True)
