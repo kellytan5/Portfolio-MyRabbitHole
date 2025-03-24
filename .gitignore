@@ -8,3 +8,5 @@ wonderland/staticfiles/
 # OS files
 .DS_Store
 *.log
+
+**.pyc
