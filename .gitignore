@@ -1,6 +1,6 @@
 # Python (for Django)
 wonderland/venv/
-wonderland/__pycache__/
+wonderland/__pycache__
 wonderland/db.sqlite3
 wonderland/media/
 wonderland/staticfiles/
@@ -8,5 +8,3 @@ wonderland/staticfiles/
 # OS files
 .DS_Store
 *.log
-
-**.pyc
