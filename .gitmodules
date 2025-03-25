@@ -1,0 +1,3 @@
+[submodule "myrabbithole"]
+  path = myrabbithole
+  url = https://github.com/kellytan5/myrabbithole.git
