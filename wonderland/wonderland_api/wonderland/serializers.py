@@ -9,12 +9,12 @@ class ContactSerializer(serializers.HyperlinkedModelSerializer):
 class EduSerializer(serializers.HyperlinkedModelSerializer):
   class Meta: 
     model = Education
-    fields = ['id', 'title', 'description', 'location', 'duration', 'image', 'name', 'position', 'link']
+    fields = ['id', 'title', 'description', 'location', 'start_date', 'end_date', 'image', 'name', 'position', 'link']
 
 class ExpSerializer(serializers.HyperlinkedModelSerializer):
   class Meta: 
     model = Experience
-    fields = ['id', 'date', 'title', 'company', 'description', 'location']
+    fields = ['id', 'start_date', 'end_date', 'title', 'company', 'description', 'location']
 
 
 class ProjectImageSerializer(serializers.ModelSerializer):
@@ -27,4 +27,4 @@ class ProjectSerializer(serializers.HyperlinkedModelSerializer):
 
   class Meta: 
     model = Project
-    fields = ['id', 'title', 'description', 'conclusion', 'location', 'duration', 'position', 'images', 'github', 'figma']
+    fields = ['id', 'title', 'description', 'conclusion', 'location', 'start_date', 'end_date', 'position', 'images', 'github', 'figma']

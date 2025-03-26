@@ -13,10 +13,11 @@ class Contact(models.Model):
     return self.name 
 
 class Education(models.Model):
+  start_date = models.CharField(max_length=7)  # Format: YYYY-MM
+  end_date = models.CharField(max_length=7)    # Format: YYYY-MM
   title = models.CharField(max_length = 200) # title
   description = models.CharField(max_length = 200) # description
   location = models.CharField(max_length = 100) # location
-  duration = models.CharField(max_length = 100) # duration 
   image = models.URLField(max_length=200, blank=True, null=True) # image URL field 
   name = models.CharField(max_length = 100) # name
   position = models.CharField(max_length = 100) # position
@@ -26,7 +27,8 @@ class Education(models.Model):
     return self.title
 
 class Experience(models.Model):
-  date = models.CharField(max_length = 100) # date
+  start_date = models.CharField(max_length=7)  # Format: YYYY-MM
+  end_date = models.CharField(max_length=7)    # Format: YYYY-MM
   title = models.CharField(max_length = 250) # title
   company = models.CharField(max_length = 100) # company
   description = models.JSONField(default = list) # description (list format)
@@ -41,7 +43,8 @@ class Project(models.Model):
   description = models.CharField(max_length = 1000) # description
   conclusion = models.CharField(max_length = 200) # conclusion 
   location = models.CharField(max_length = 100) # location
-  duration = models.CharField(max_length = 100) # duration 
+  start_date = models.CharField(max_length=7)  # Format: YYYY-MM
+  end_date = models.CharField(max_length=7)    # Format: YYYY-MM
   position = models.CharField(max_length = 100) # position 
   github = models.URLField(max_length=200, blank=True, null=True) # github URL field
   figma = models.URLField(max_length=200, blank=True, null=True) # figma URL field 
