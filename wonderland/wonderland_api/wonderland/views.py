@@ -39,6 +39,40 @@ class ContactAPIView(viewsets.ModelViewSet):
       # If validation fails, return errors
       return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
   
+# CRUD Project
+class ProjectViewSet(viewsets.ModelViewSet):
+  queryset = Project.objects.all()
+  serializer_class = ProjectSerializer
+  permission_classes = [AllowAny]
+
+  def list(self, request):
+    data = self.get_queryset()
+    serializer = self.get_serializer(data, many=True)
+    return Response(serializer.data)
+
+  def retrieve(self, request, pk=None):
+    instance = self.get_object()
+    serializer = self.get_serializer(instance)
+    return Response(serializer.data)
+
+class ProjectImageViewSet(viewsets.ModelViewSet):
+  queryset = ProjectImage.objects.all()
+  serializer_class = ProjectImageSerializer
+  parser_classes = (MultiPartParser, FormParser)  # Allows image uploads
+  def create(self, request, *args, **kwargs):
+    """Handle multiple image uploads"""
+    images = request.FILES.getlist('image')  # Get multiple files
+    project_id = request.data.get("project")  # Get project ID
+    if not project_id:
+        return Response({"error": "Project ID is required"}, status=status.HTTP_400_BAD_REQUEST)
+    try:
+        p = Project.objects.get(id=project_id)
+    except Project.DoesNotExist:
+        return Response({"error": "Project not found"}, status=status.HTTP_404_NOT_FOUND)
+    for image in images:
+        ProjectImage.objects.create(project=p, image=image)
+    return Response({"message": "Images uploaded successfully"}, status=status.HTTP_201_CREATED)
+  
 # CRUD Education 
 class EducationAPIView(viewsets.ModelViewSet):
   # get all educations
@@ -74,37 +108,3 @@ class ExpAPIView(viewsets.ModelViewSet):
     instance = self.get_object()
     serializer = self.get_serializer(instance)
     return Response(serializer.data)
-  
-# CRUD Project
-class ProjectViewSet(viewsets.ModelViewSet):
-  queryset = Project.objects.all()
-  serializer_class = ProjectSerializer
-  permission_classes = [AllowAny]
-
-  def list(self, request):
-    data = self.get_queryset()
-    serializer = self.get_serializer(data, many=True)
-    return Response(serializer.data)
-
-  def retrieve(self, request, pk=None):
-    instance = self.get_object()
-    serializer = self.get_serializer(instance)
-    return Response(serializer.data)
-
-class ProjectImageViewSet(viewsets.ModelViewSet):
-  queryset = ProjectImage.objects.all()
-  serializer_class = ProjectImageSerializer
-  parser_classes = (MultiPartParser, FormParser)  # Allows image uploads
-  def create(self, request, *args, **kwargs):
-    """Handle multiple image uploads"""
-    images = request.FILES.getlist('image')  # Get multiple files
-    project_id = request.data.get("project")  # Get project ID
-    if not project_id:
-        return Response({"error": "Project ID is required"}, status=status.HTTP_400_BAD_REQUEST)
-    try:
-        p = Project.objects.get(id=project_id)
-    except Project.DoesNotExist:
-        return Response({"error": "Project not found"}, status=status.HTTP_404_NOT_FOUND)
-    for image in images:
-        ProjectImage.objects.create(project=p, image=image)
-    return Response({"message": "Images uploaded successfully"}, status=status.HTTP_201_CREATED)
