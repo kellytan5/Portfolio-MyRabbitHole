@@ -1,9 +1,10 @@
 # Python (for Django)
-wonderland/venv/
-wonderland/__pycache__
-wonderland/db.sqlite3
-wonderland/media/
-wonderland/staticfiles/
+wonderland_api/__pycache__
+wonderland_api/db.sqlite3
+wonderland_api/media/
+wonderland_api/staticfiles/
+
+wonderland/
 
 # OS files
 .DS_Store
