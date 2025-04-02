@@ -4,8 +4,6 @@ wonderland_api/db.sqlite3
 wonderland_api/media/
 wonderland_api/staticfiles/
 
-wonderland/
-
 # OS files
 .DS_Store
 *.log
