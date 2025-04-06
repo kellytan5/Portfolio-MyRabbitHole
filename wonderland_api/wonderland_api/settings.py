@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+from dotenv import load_dotenv
+load_dotenv()
 
 import dj_database_url
 import os
@@ -81,13 +83,10 @@ WSGI_APPLICATION = 'wonderland_api.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
-    'default': {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "db.sqlite3",
-    }
+  'default': dj_database_url.config(
+    default=os.environ.get("DATABASE_URL")
+  )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

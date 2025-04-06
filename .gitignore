@@ -3,6 +3,7 @@ wonderland_api/__pycache__
 wonderland_api/db.sqlite3
 wonderland_api/media/
 wonderland_api/staticfiles/
+wonderland_api/test_db_connection.py
 
 # OS files
 .DS_Store
