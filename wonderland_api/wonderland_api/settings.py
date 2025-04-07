@@ -30,8 +30,11 @@ SECRET_KEY = 'django-insecure-+o#gg2cip2%uz%e(8k0-$hg7oa&k1h@h6z_w+^a5-lz8s@^oep
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'portfolio-myrabbithole.onrender.com',  
+]
 
 # Application definition
 
