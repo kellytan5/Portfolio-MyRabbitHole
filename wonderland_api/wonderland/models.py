@@ -17,7 +17,6 @@ class Project(models.Model):
   title = models.CharField(max_length = 200) # title
   description = models.CharField(max_length = 1000) # description
   conclusion = models.CharField(max_length = 200) # conclusion 
-  location = models.CharField(max_length = 100) # location
   start_date = models.CharField(max_length=7)  # Format: YYYY-MM
   end_date = models.CharField(max_length=7)    # Format: YYYY-MM
   position = models.CharField(max_length = 100) # position 
