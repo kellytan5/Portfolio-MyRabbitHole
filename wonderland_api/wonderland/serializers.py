@@ -16,7 +16,7 @@ class ProjectSerializer(serializers.HyperlinkedModelSerializer):
 
   class Meta: 
     model = Project
-    fields = ['id', 'title', 'description', 'conclusion', 'location', 'start_date', 'end_date', 'position', 'images', 'github', 'figma']
+    fields = ['id', 'title', 'description', 'conclusion', 'start_date', 'end_date', 'position', 'images', 'github', 'figma']
 
 class EduSerializer(serializers.HyperlinkedModelSerializer):
   projects = serializers.PrimaryKeyRelatedField(many=True, queryset=Project.objects.all())
