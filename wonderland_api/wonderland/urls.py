@@ -12,4 +12,5 @@ urlpatterns = [
     path('exp/<int:pk>/', ExpAPIView.as_view({'get': 'retrieve'}), name="exp_retrieve"),
     path('project_list/', ProjectViewSet.as_view({'get': 'list'}), name="project_list"),
     path('projects/<int:pk>/', ProjectViewSet.as_view({'get': 'retrieve'}), name="project_retrieve"),
+    path('api/project-images/<int:project_id>/', ProjectImageViewSet.as_view({'get': 'get'}), name='project-images'),
 ]

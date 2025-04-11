@@ -41,6 +41,7 @@ class ContactAPIView(viewsets.ModelViewSet):
   
 # CRUD Project
 class ProjectViewSet(viewsets.ModelViewSet):
+  images = ProjectImageSerializer(many=True)  # Nest images inside project data
   queryset = Project.objects.all()
   serializer_class = ProjectSerializer
   permission_classes = [AllowAny]
@@ -72,6 +73,16 @@ class ProjectImageViewSet(viewsets.ModelViewSet):
     for image in images:
         ProjectImage.objects.create(project=p, image=image)
     return Response({"message": "Images uploaded successfully"}, status=status.HTTP_201_CREATED)
+  
+  def get(self, request, project_id): 
+    # You can use `project_id` directly because it's passed from the URL
+    try:
+      project = Project.objects.get(id=project_id)
+      project_images = project.images.all()  # Get all images for this project
+      image_serializer = ProjectImageSerializer(project_images, many=True)
+      return JsonResponse({'project': project.name, 'images': image_serializer.data})
+    except Project.DoesNotExist:
+      return JsonResponse({'error': 'Project not found'}, status=404)
   
 # CRUD Education 
 class EducationAPIView(viewsets.ModelViewSet):
