@@ -1,10 +1,31 @@
-# Python (for Django)
-wonderland_api/__pycache__
-wonderland_api/db.sqlite3
-wonderland_api/media/
-wonderland_api/staticfiles/
-wonderland_api/test_db_connection.py
+# Virtual environment
+venv/
+
+# Rasa bot files to ignore
+rasa/models/
+rasa/.rasa/
+rasa/.rasa_cache/
+rasa/__pycache__/
+rasa/*.pyc
+rasa/*.log
+
+# Django general ignores
+*.pyc
+__pycache__/
+*.db
+*.sqlite3
+
+# Environment variables
+.env
+*.env
+
+# IDE/editor files
+.vscode/
+.idea/
 
 # OS files
 .DS_Store
+Thumbs.db
+
+# Logs
 *.log
