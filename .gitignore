@@ -29,3 +29,5 @@ Thumbs.db
 
 # Logs
 *.log
+
+test_db_connections.py
