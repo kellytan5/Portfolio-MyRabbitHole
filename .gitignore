@@ -30,4 +30,4 @@ Thumbs.db
 # Logs
 *.log
 
-test_db_connections.py
+test_db_connection.py
