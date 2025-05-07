@@ -1,6 +1,2 @@
 rasa==3.5.11
 requests
-scikit-learn<1.2  # compatibility for older Rasa
-tensorflow~=2.11.0
-aiohttp
-python-dateutil
