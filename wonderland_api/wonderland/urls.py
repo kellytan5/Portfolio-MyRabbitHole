@@ -1,5 +1,6 @@
 from django.urls import path 
 from .views import *
+from . import chatbot
 
 # define the urls
 urlpatterns = [
@@ -13,4 +14,7 @@ urlpatterns = [
     path('project_list/', ProjectViewSet.as_view({'get': 'list'}), name="project_list"),
     path('projects/<int:pk>/', ProjectViewSet.as_view({'get': 'retrieve'}), name="project_retrieve"),
     path('api/project-images/<int:project_id>/', ProjectImageViewSet.as_view({'get': 'get'}), name='project-images'),
+
+    # chatbot url 
+    path('chat/', chatbot.chatbot_response, name='chatbot_response'),
 ]
