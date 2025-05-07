@@ -4,9 +4,6 @@ FROM rasa/rasa:3.6.10-full
 # Set working directory
 WORKDIR /app
 
-# Install any extra dependencies first
-RUN pip install --no-cache-dir -r requirements.txt
-
 # Optionally train model if no model exists
 RUN rasa train || echo "Skipping training (model may already exist)"
 
