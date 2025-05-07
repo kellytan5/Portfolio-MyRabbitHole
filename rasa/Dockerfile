@@ -5,7 +5,7 @@ FROM rasa/rasa:3.6.10-full
 WORKDIR /app
 
 # Optionally train model if no model exists
-RUN rasa train || echo "Skipping training (model may already exist)"
+RUN rasa train
 
 # Expose Rasa default port
 EXPOSE 5005
