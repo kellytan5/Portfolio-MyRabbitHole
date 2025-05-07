@@ -3,8 +3,8 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
 
-# RASA_URL = 'https://portfolio-myrabbithole.up.railway.app/webhooks/rest/webhook'
-RASA_URL = 'http://localhost:5005/webhooks/rest/webhook'
+RASA_URL = 'https://portfolio-myrabbithole.up.railway.app/webhooks/rest/webhook'
+# RASA_URL = 'http://localhost:5005/webhooks/rest/webhook'
 
 @csrf_exempt
 def chatbot_response(request):
