@@ -10,5 +10,7 @@ COPY . /app
 # Ensure the model folder exists (optional fallback)
 RUN rasa train || echo "Skipping training (model may already exist)"
 
+RUN pip install -r requirements.txt
+
 # Run the Rasa server with CORS and API enabled
 CMD ["run", "--enable-api", "--cors", "*", "--debug"]
