@@ -5,7 +5,6 @@ venv/
 tasks/
 
 # Rasa bot files to ignore
-models/
 .rasa/
 
 # Django general ignores
