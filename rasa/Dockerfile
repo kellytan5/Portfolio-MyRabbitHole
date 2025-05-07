@@ -1,18 +1,23 @@
-# Use official Rasa image with a compatible Python version
+# Use official Rasa image (Python 3.8+, Ubuntu-based)
 FROM rasa/rasa:3.6.10-full
 
 # Set working directory
 WORKDIR /app
 
-# Copy your Rasa project files
-COPY . /app
+# Copy only necessary files first for caching benefits
+COPY ./requirements.txt ./requirements.txt
 
-# Ensure the model folder exists (optional fallback)
+# Install any extra dependencies first
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the project files
+COPY . .
+
+# Optionally train model if no model exists
 RUN rasa train || echo "Skipping training (model may already exist)"
 
-RUN pip install -r requirements.txt
-
+# Expose Rasa default port
 EXPOSE 5005
 
-# Run the Rasa server with CORS and API enabled
-CMD ["run", "--enable-api", "--cors", "*", "--debug"]
+# Start Rasa with API and CORS enabled
+CMD ["rasa", "run", "--enable-api", "--cors", "*", "--debug"]
