@@ -1,8 +1,0 @@
-{
-  "build": {
-    "env": {},
-    "builder": "DOCKERFILE",
-    "dockerfilePath": "rasa/Dockerfile",
-    "context": "rasa-bot"
-  }
-}
