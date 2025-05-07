@@ -1,0 +1,53 @@
+version: "3.1"
+
+stories:
+
+- story: greet the bot
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- story: user asks about creator 
+  steps: 
+    - intent: ask_about_user
+    - action: utter_ask_about_user
+
+- story: user asks about skills
+  steps:
+    - intent: ask_about_skills
+    - action: utter_ask_about_skills
+
+- story: user asks about projects
+  steps:
+    - intent: ask_about_projects
+    - action: utter_ask_about_projects
+
+- story: user asks about resume
+  steps:
+    - intent: ask_resume
+    - action: utter_ask_resume
+
+- story: user asks about certifications
+  steps:
+    - intent: ask_about_certifications
+    - action: utter_ask_certifications
+
+- story: user asks about education
+  steps:
+    - intent: ask_about_education
+    - action: utter_ask_education
+
+- story: user asks about experience
+  steps:
+    - intent: ask_about_experience
+    - action: utter_ask_about_experience
+
+- story: user asks about hobbies 
+  steps: 
+    - intent: ask_about_hobbies 
+    - action: utter_ask_about_hobbies
+
+- story: user asks about their current state 
+  steps: 
+    - intent: ask_about_current_state 
+    - action: utter_ask_about_current_state
