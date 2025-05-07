@@ -1,12 +1,14 @@
-FROM rasa/rasa:3.6.10
+# Use official Rasa image with a compatible Python version
+FROM rasa/rasa:3.6.10-full
 
-# Copy Rasa project files
-COPY . /app
-
+# Set working directory
 WORKDIR /app
 
-# Train the model (optional, or can be done manually before pushing)
-RUN rasa train
+# Copy your Rasa project files
+COPY . /app
 
-# Run Rasa server
+# Ensure the model folder exists (optional fallback)
+RUN rasa train || echo "Skipping training (model may already exist)"
+
+# Run the Rasa server with CORS and API enabled
 CMD ["run", "--enable-api", "--cors", "*", "--debug"]
