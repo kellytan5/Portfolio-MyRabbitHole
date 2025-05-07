@@ -20,4 +20,4 @@ RUN rasa train || echo "Skipping training (model may already exist)"
 EXPOSE 5005
 
 # Start Rasa with API and CORS enabled
-CMD ["rasa", "run", "--enable-api", "--cors", "*", "--debug"]
+CMD ["run", "--enable-api", "--cors", "*", "--debug"]
