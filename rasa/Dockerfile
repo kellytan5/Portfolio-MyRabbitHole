@@ -1,11 +1,14 @@
 # Use official Rasa image (Python 3.8+, Ubuntu-based)
 FROM rasa/rasa:3.6.10-full
+FROM python-3.10.12
 
 # Set working directory
 WORKDIR /app
 
 # Copy the Rasa project files into the container
 COPY . /app
+
+RUN pip install --no-cache-dir -r requirements.txt
 
 RUN rasa train
 
