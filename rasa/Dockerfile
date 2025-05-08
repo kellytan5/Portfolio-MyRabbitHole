@@ -4,7 +4,9 @@ FROM rasa/rasa:3.6.10-full
 # Set working directory
 WORKDIR /app
 
-# Optionally train model if no model exists
+# Copy the Rasa project files into the container
+COPY . /app
+
 RUN rasa train
 
 # Expose Rasa default port
