@@ -10,12 +10,7 @@ assistant_id: 20250502-173134-emerald-ramp
 # https://rasa.com/docs/rasa/nlu/components/
 language: en
 
-pipeline:
-  - name: WhitespaceTokenizer
-  - name: CountVectorsFeaturizer
-  - name: DIETClassifier
-    epochs: 100
-    entity_recognition: False  # <-- This disables entity extraction
+pipeline: null
 # # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
 # # If you'd like to customize it, uncomment and adjust the pipeline.
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.

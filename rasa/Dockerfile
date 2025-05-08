@@ -17,4 +17,4 @@ RUN rasa train || echo "Training skipped or failed"  # Avoid crash
 EXPOSE 5005
 
 # Start Rasa with API and CORS enabled
-CMD ["rasa", "run", "--enable-api", "--cors", "*", "--debug"]
+CMD ["run", "--enable-api", "--cors", "*", "--debug"]
