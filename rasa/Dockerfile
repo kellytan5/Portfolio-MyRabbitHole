@@ -8,9 +8,6 @@ WORKDIR /app
 # Copy the Rasa project files into the container
 COPY . /app
 
-# Optional: Install any custom dependencies
-RUN pip install --no-cache-dir -r requirements.txt || true
-
 RUN rasa train || echo "Training skipped or failed"  # Avoid crash
 
 # Expose Rasa default port
