@@ -14,4 +14,4 @@ COPY . /app
 EXPOSE 5005
 
 # Start Rasa with API and CORS enabled
-CMD ["run", "--enable-api", "--cors", "*", "--debug"]
+CMD ["rasa", "run", "--enable-api", "--cors", "*", "--debug"]
