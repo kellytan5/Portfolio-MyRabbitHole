@@ -6,9 +6,7 @@ FROM python:3.10-slim
 WORKDIR /rasa
 
 # Copy the Rasa project files into the container
-# COPY . /rasa
-
-COPY models/ /app/models/
+COPY . /rasa
 
 # Optional: Install any custom dependencies
 RUN pip install --no-cache-dir -r requirements.txt || true

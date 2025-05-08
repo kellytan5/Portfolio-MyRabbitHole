@@ -44,7 +44,7 @@ responses:
     - text: "She has worked as a Software Engineer Intern at Cya Live, where they developed features in Vue.js and Node.js and optimized AWS workflows. She also interned as an IT Helpdesk technician and worked in customer-facing roles at Mr Bin Building Supply Ltd."
 
   utter_ask_about_hobbies: 
-    - text: "In her free time, she enjoys reading fantasy novels, doodling imaginative sketches, and playing online games with friends — a blend of creativity and strategy that often inspires her approach to problem-solving and design."
+    - text: "In her free time, she enjoys reading novels, doodling imaginative sketches, and playing online games with friends — a blend of creativity and strategy that often inspires her approach to problem-solving and design."
 
   utter_ask_about_current_state:
     - text: "She's currently refining her portfolio, enhancing her technical skills, and actively seeking opportunities in software development."
