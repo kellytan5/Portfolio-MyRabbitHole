@@ -8,8 +8,6 @@ WORKDIR /app
 # Copy the Rasa project files into the container
 COPY . /app
 
-RUN pip install --no-cache-dir -r requirements.txt
-
 RUN rasa train
 
 # Expose Rasa default port
