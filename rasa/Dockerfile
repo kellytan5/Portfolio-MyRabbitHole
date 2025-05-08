@@ -8,7 +8,7 @@ WORKDIR /app
 # Copy the Rasa project files into the container
 COPY . /app
 
-RUN rasa train
+# RUN rasa train 
 
 # Expose Rasa default port
 EXPOSE 5005
