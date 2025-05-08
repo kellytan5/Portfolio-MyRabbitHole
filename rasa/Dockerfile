@@ -3,12 +3,13 @@ FROM rasa/rasa:3.6.10-full
 FROM python:3.10-slim
 
 # Set working directory
-WORKDIR /app
+WORKDIR /rasa
 
 # Copy the Rasa project files into the container
-COPY . /app
+COPY . /rasa
 
-RUN rasa train || echo "Training skipped or failed"  # Avoid crash
+# Optional: Install any custom dependencies
+RUN pip install --no-cache-dir -r requirements.txt || true
 
 # Expose Rasa default port
 EXPOSE 5005
