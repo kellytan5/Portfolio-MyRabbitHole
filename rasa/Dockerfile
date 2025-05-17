@@ -15,4 +15,4 @@ RUN pip install --no-cache-dir -r requirements.txt || true
 EXPOSE 8080
 
 # Start Rasa with API and CORS enabled
-CMD ["rasa", "run", "--enable-api", "--model", "models", "--cors", "*", "--port", "8080"]
+CMD ["run", "--enable-api", "--model", "models", "--cors", "*", "--port", "8080"]
