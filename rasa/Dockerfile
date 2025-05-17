@@ -13,7 +13,7 @@ ENV SQLALCHEMY_SILENCE_UBER_WARNING=1
 RUN pip install --no-cache-dir -r requirements.txt || true
 
 # Expose Rasa default port
-EXPOSE 5005
+EXPOSE 8080
 
 # Start Rasa with API and CORS enabled
-CMD ["rasa", "run", "--enable-api", "--model", "models", "--cors", "*"]
+CMD ["rasa", "run", "--enable-api", "--model", "models", "--cors", "*", "--port", "8080"]
