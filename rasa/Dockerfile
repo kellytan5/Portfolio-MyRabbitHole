@@ -8,11 +8,12 @@ WORKDIR /app
 # Copy the Rasa project files into the container
 COPY . /app
 
-# Optional: Install any custom dependencies
+ENV SQLALCHEMY_SILENCE_UBER_WARNING=1
+
 RUN pip install --no-cache-dir -r requirements.txt || true
 
 # Expose Rasa default port
 EXPOSE 5005
 
 # Start Rasa with API and CORS enabled
-CMD ["rasa", "run", "--enable-api", "--cors", "*", "--debug"]
+CMD ["rasa", "run", "--enable-api", "--model", "models", "--cors", "*"]
