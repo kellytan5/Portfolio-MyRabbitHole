@@ -18,8 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    # for tasks
+    # for wonderland
     path('api/', include('wonderland.urls')),
+    # for chatbot 
+    path('api/chatbot/', include('chatbot.urls')),
     # for admin side
     path('admin/', admin.site.urls),
 ]

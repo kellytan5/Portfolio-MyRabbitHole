@@ -16,5 +16,5 @@ urlpatterns = [
     path('api/project-images/<int:project_id>/', ProjectImageViewSet.as_view({'get': 'get'}), name='project-images'),
 
     # chatbot url 
-    path('chat/', chatbot.chatbot_response, name='chatbot_response'),
+    # path('chat/', chatbot.chatbot_response, name='chatbot_response'),
 ]
