@@ -1,11 +1,6 @@
 # chatbot/views.py
-import os
-import nltk
 from django.http import JsonResponse
 from .nlp import chatbot
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-nltk.data.path.append(os.path.join(BASE_DIR, '..', 'nltk_data'))
 
 def chatbot_response(request):
     user_input = request.GET.get("message").lower()
