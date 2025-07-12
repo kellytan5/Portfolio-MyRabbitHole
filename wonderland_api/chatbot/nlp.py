@@ -1,21 +1,10 @@
 import random
 import os
 import joblib
-import nltk
 import re
 import string
-from nltk.data import load
-from nltk.stem.porter import PorterStemmer
-from nltk.tokenize import word_tokenize
-from nltk.tokenize.punkt import PunktSentenceTokenizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
-
-
-NLTK_DATA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'nltk_data')
-nltk.data.path.append(NLTK_DATA_PATH)
-
-stemmer = PorterStemmer()
 
 # Paths to save/load model & vectorizer
 MODEL_PATH = "chatbot/chatbot_model.pkl"
@@ -84,14 +73,14 @@ intents = {
   }
 }
 
-tokenizer = PunktSentenceTokenizer(load('tokenizers/punkt/english.pickle'))
 
-def tokenize_and_stem(text):
-  sentences = tokenizer.tokenize(text)
-  tokens = []
-  for sent in sentences:
-    tokens.extend(word_tokenize(sent))
-  return [stemmer.stem(word.lower()) for word in tokens]
+def preprocess_text(text):
+    text = text.lower()
+    text = re.sub(f"[{re.escape(string.punctuation)}]", "", text)
+    return text
+
+def simple_tokenizer(text):
+    return preprocess_text(text).split()
 
 def preprocess_text(text):
     text = text.lower()
@@ -104,7 +93,7 @@ class ChatbotModel:
       self.model = joblib.load(MODEL_PATH)
       self.vectorizer = joblib.load(VECTORIZER_PATH)
     else:
-      self.vectorizer = TfidfVectorizer(tokenizer=tokenize_and_stem)
+      self.vectorizer = TfidfVectorizer(tokenizer=simple_tokenizer)
       self.model = LogisticRegression(max_iter=1000)
       self.train()
       joblib.dump(self.model, MODEL_PATH)
@@ -123,7 +112,6 @@ class ChatbotModel:
     text = preprocess_text(text)
     X = self.vectorizer.transform([text])
     intent = self.model.predict(X)[0]
-    print(intent)
     return random.choice(intents[intent]["responses"])
 
-chatbot = ChatbotModel(force_retrain=True)
+chatbot = ChatbotModel()
