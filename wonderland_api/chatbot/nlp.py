@@ -4,8 +4,10 @@ import joblib
 import nltk
 import re
 import string
+from nltk.data import load
 from nltk.stem.porter import PorterStemmer
 from nltk.tokenize import word_tokenize
+from nltk.tokenize.punkt import PunktSentenceTokenizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 
@@ -82,8 +84,14 @@ intents = {
   }
 }
 
+tokenizer = PunktSentenceTokenizer(load('tokenizers/punkt/english.pickle'))
+
 def tokenize_and_stem(text):
-  return [stemmer.stem(word.lower()) for word in word_tokenize(text)]
+  sentences = tokenizer.tokenize(text)
+  tokens = []
+  for sent in sentences:
+    tokens.extend(word_tokenize(sent))
+  return [stemmer.stem(word.lower()) for word in tokens]
 
 def preprocess_text(text):
     text = text.lower()
@@ -118,4 +126,4 @@ class ChatbotModel:
     print(intent)
     return random.choice(intents[intent]["responses"])
 
-chatbot = ChatbotModel()
+chatbot = ChatbotModel(force_retrain=True)
