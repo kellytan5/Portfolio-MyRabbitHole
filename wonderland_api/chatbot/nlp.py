@@ -10,8 +10,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-nltk.data.path.append(os.path.join(BASE_DIR, 'nltk_data'))
+NLTK_DATA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'nltk_data')
+nltk.data.path.append(NLTK_DATA_PATH)
 
 stemmer = PorterStemmer()
 
