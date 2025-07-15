@@ -33,7 +33,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'portfolio-myrabbithole.onrender.com',  
+    'https://portfolio-ywk1.onrender.com',  
 ]
 
 # Application definition
