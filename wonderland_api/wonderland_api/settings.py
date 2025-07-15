@@ -33,7 +33,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'https://portfolio-ywk1.onrender.com',  
+    'portfolio-ywk1.onrender.com',  
 ]
 
 # Application definition
