@@ -1,12 +1,6 @@
 # Virtual environment
 venv/
 
-# Sample project
-tasks/
-
-# Rasa bot files to ignore
-.rasa/
-
 # Django general ignores
 *.pyc
 __pycache__/
