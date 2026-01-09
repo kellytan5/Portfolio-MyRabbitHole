@@ -37,7 +37,12 @@ TEMPLATES = []
 
 WSGI_APPLICATION = 'wonderland_api.wsgi.application'
 
-DATABASES = {}
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
