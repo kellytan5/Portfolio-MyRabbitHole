@@ -37,11 +37,7 @@ TEMPLATES = []
 
 WSGI_APPLICATION = 'wonderland_api.wsgi.application'
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.dummy"
-    }
-}
+DATABASES = {}
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
