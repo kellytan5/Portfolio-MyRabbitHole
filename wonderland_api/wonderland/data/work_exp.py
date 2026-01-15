@@ -1,4 +1,4 @@
-EXPERIENCES = [
+WORK_EXPERIENCES = [
   {
     'id': 1,
     'title': 'Software Engineering Co-op',

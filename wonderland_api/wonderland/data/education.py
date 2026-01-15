@@ -17,6 +17,6 @@ EDUCATION = [
     'location': 'Scarborough, ON, Canada',
     'start_date': '2018',
     'end_date': '2020', 
-    'image': 'Centennial_College_Logo.png',
+    'image': 'Centennial_College_Logo.jpg',
   }
 ]
