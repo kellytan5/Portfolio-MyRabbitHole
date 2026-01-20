@@ -13,6 +13,7 @@ export default {
       });
     }
 
+		/* ---------- API ---------- */
 		if (url.pathname.startsWith('/api/')) {
 			const cache = caches.default; 
 
@@ -56,6 +57,20 @@ export default {
 
 			return response;
 		}
+
+		/* ---------- CHATBOT ---------- */
+    if (url.pathname.startsWith('/chatbot/')) {
+      const renderUrl =
+        `https://portfolio-ywk1.onrender.com${url.pathname}${url.search}`;
+
+      const response = await fetch(renderUrl, request);
+
+      const proxied = new Response(response.body, response);
+      proxied.headers.set('Access-Control-Allow-Origin', '*');
+
+      return proxied;
+    }
+
 		return new Response('Not Found', { status: 404 });
 	},
 };
