@@ -53,5 +53,5 @@ STATIC_URL = 'static/'
 
 CORS_ALLOWED_ORIGINS = [
   "https://kellytan-portfolio.vercel.app",
-  "http://localhost:8080"
+  "http://localhost:5173"
 ]

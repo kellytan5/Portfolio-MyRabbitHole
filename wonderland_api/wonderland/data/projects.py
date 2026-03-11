@@ -1,6 +1,25 @@
 PROJECTS = [
   {
     'id': 1,
+    'title': 'HakoKai', 
+    'overview': 'A full-stack inventory system built to manage products for a small business. Originally conceived as a collections tracker, HakoKai evolved into a practical business tool featuring product management, user authentication, and an analytics dashboard.',
+    'problem': 'Managing small business inventory through spreadsheets is scattered and inefficient. A dedicated tool was needed to track products, monitor stock, and provide a clear overview of the business at a glance.',
+    'approach': 'Built with Vue.js and Node.js/Express, applying MVC architecture and responsive design principles. The project began with a landing page to establish brand identity and gather early user research before pivoting toward a business-focused application.',
+    'outcome': 'An in-progress full-stack application with core features underway, supported by an early brand presence through a deployed landing page.',
+    'improvements': 'Expand analytics capabilities, add inventory alerts for low stock, and refine the UI based on real usage.',
+    'role': 'Sole Designer and Developer',
+    'scope': 'Aug 2025 - present',
+    'tags': ['Vue.js', 'Node.js', 'Express', 'MongoDB', 'MVC'],
+    'card_tags': ['In Progress', 'UI/UX Design', 'Full-Stack Development', 'Web Development'],
+    'links': { "live": "https://hakokai.netlify.app/" },
+    'exhibition': [
+      "https://hakokai.netlify.app/",
+      "/project_content/hakokai/mockupss.png",
+      "/project_content/hakokai/inventory_mockupss.png"
+    ],
+  },
+  {
+    'id': 2,
     'title': 'Portfolio', 
     'overview': 'To create a portfolio that reflects my visual style while demonstrating front-end architecture and basic back-end integration.',
     'problem': 'I wanted a portfolio that stood out visually while remaining readable and maintainable, without overengineering the back-end.',
@@ -9,21 +28,17 @@ PROJECTS = [
     'improvements': 'If I revisit this project, I would improve accessibility and refine state management as the project grows.',
     'role': 'Sole Designer and Developer',
     'scope': 'Front-end structure, visual design, and integration with a Django backend.',
-    'links': [],
-    'exhibition': [],
-  },
-  {
-    'id': 2,
-    'title': 'Pinecone', 
-    'overview': 'A university group project exploring LiDAR data processing concepts. My contribution focused on supporting the design phase by creating technical diagrams and documentation.',
-    'problem': 'The team needed a clear shared understanding of a complex system involving LiDAR data processing, but the initial requirements and system structure were difficult to visualize.',
-    'approach': 'I contributed by producing UML diagrams and structured documentation to represent system components, workflows, and relationships. I worked closely with teammates to ensure the documentation aligned with evolving requirements.',
-    'outcome': 'The documentation helped establish a common reference point for the team and strengthened my ability to translate complex technical concepts into clear, maintainable visuals.',
-    'improvements': 'If given more time, I would refine the diagrams iteratively as the system evolved and explore lightweight documentation tools that better integrate with development workflows.',
-    'role': 'Software Engineer',
-    'scope': 'UML diagram creation, technical documentation, and conceptual understanding of system overflows',
-    'links': [],
-    'exhibition': [],
+    'tags': ['Figma', 'Vue.js', 'Django', 'SCSS'],
+    'card_tags': ['UI Design', 'Web Development'],
+    'links': { 
+      'figma': 'https://www.figma.com/design/zAHLw30PSvTrp4p9SLwJVk/Rabbithole-Design?node-id=0-1&t=TtFKOBSTE4wPaRg3-1', 
+      'github': 'https://github.com/kellytan5/Portfolio-MyRabbitHole' 
+    },
+    'exhibition': [ 
+      "/project_content/portfolio/chatbotdemo.mp4",
+      "/project_content/portfolio/navdemo.mp4",
+      "https://embed.figma.com/design/zAHLw30PSvTrp4p9SLwJVk/Rabbithole-Design?node-id=0-1&embed-host=share"
+    ],
   },
   {
     'id': 3,
@@ -35,9 +50,34 @@ PROJECTS = [
     'improvements': 'I would explore basic test automation and improve test coverage by expanding edge-case scenarios.',
     'role': 'Quality Assurance Tester',
     'scope': 'Manual testing and defect documentation',
-    'links': [],
-    'exhibition': [],
+    'tags': ['Manual Testing', 'Test Cases', 'Defect Documentation'],
+    'card_tags': ['Quality Assurance'],
+    'links': {},
+    'exhibition': [ 
+      "/project_content/business_directory/TestCase13.pdf",
+      "/project_content/business_directory/TestCase15.pdf",
+      "/project_content/business_directory/TestCase16.pdf" 
+    ],
   }, 
+  {
+    'id': 4,
+    'title': 'Pinecone', 
+    'overview': 'A university group project exploring LiDAR data processing concepts. My contribution focused on supporting the design phase by creating technical diagrams and documentation.',
+    'problem': 'The team needed a clear shared understanding of a complex system involving LiDAR data processing, but the initial requirements and system structure were difficult to visualize.',
+    'approach': 'I contributed by producing UML diagrams and structured documentation to represent system components, workflows, and relationships. I worked closely with teammates to ensure the documentation aligned with evolving requirements.',
+    'outcome': 'The documentation helped establish a common reference point for the team and strengthened my ability to translate complex technical concepts into clear, maintainable visuals.',
+    'improvements': 'If given more time, I would refine the diagrams iteratively as the system evolved and explore lightweight documentation tools that better integrate with development workflows.',
+    'role': 'Software Engineer',
+    'scope': 'UML diagram creation, technical documentation, and conceptual understanding of system overflows',
+    'tags': ['UML', 'Use Case Diagrams', 'Sequence Diagrams', 'Technical Writing', 'draw.io'],
+    'card_tags': ['University Project', 'Documentation', 'System Design'],
+    'links': {},
+    'exhibition': [
+      "/project_content/pinecone/usecase.png", 
+      "/project_content/pinecone/sequence_0.png",
+      "/project_content/pinecone/sequence_1.png"
+    ],
+  },
   # {
   #   'id': 1,
   #   'title': '', 
