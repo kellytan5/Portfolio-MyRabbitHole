@@ -13,13 +13,34 @@ PROJECTS = [
     'card_tags': ['In Progress', 'UI/UX Design', 'Full-Stack Development', 'Web Development'],
     'links': { "live": "https://hakokai.netlify.app/" },
     'exhibition': [
-      "https://hakokai.netlify.app/",
-      "/project_content/hakokai/mockupss.png",
-      "/project_content/hakokai/inventory_mockupss.png"
+      { 'link': "/project_content/hakokai/survey_landing.png", 'caption_title': "Landing Page Concept", 'caption': "Early landing page exploration created to establish the HakoKai brand identity and gather initial user interest before development shifted toward inventory management features."},
+      { 'link': "/project_content/hakokai/dashboard_v2.png", 'caption_title': "Dashboard Interface Exploration", 'caption': "Dashboard layout concept focused on presenting inventory insights, product data, and analytics in a clear and organized interface." }, 
+      { 'link': "/project_content/hakokai/all_items_list.png", 'caption_title': "Inventory Management Layout", 'caption': "Wireframe exploring product organization, item management workflows, and scalable list-based inventory navigation."},
+      { 'link': "/project_content/hakokai/ListView.vue", 'caption_title': "Code example - Product List View", 'caption': "Example of displaying all products in a searchable, sortable table with pagination. Fetches data from the API on mount, maps each product to a consistent format, and routes to the detail page on row click."}
     ],
   },
   {
     'id': 2,
+    'title': 'AmiYoKai - Custom WordPress Business Website', 
+    'overview': 'A custom WordPress website built for a handmade crochet brand, designed to showcase products, publish blog content, and establish a unique online presence. Developed using a custom theme in Visual Studio Code, the project emphasizes both design control and content flexibility.',
+    'problem': 'Small handmade businesses often rely on third-party marketplaces, which limit their ability to build a brand, tell their stories, and interact directly with customers. A dedicated website was needed to present products, share updates, and create a more personalized brand experience.',
+    'approach': 'Developed a custom WordPress theme, structuring core pages, including a homepage, product grid, blog, about, and contact page. Implemented responsive layouts and customized styling using HTML, CSS, and WordPress templating, allowing for full design flexibility while maintaining CMS functionality.',
+    'outcome': "A fully functional, content-driven multi-page website that combines custom frontend development with WordPress’s CMS capabilities, enabling easy updates while preserving a unique, branded user experience.",
+    'improvements': 'Introduce e-commerce functionality for direct purchases, enhance product filtering and categorization, and refine visual hierarchy based on user interaction.',
+    'role': 'Sole Designer and Developer',
+    'scope': 'April 2026',
+    'tags': ['WordPress', 'Custom Themes', 'HTML', 'CSS', 'Responsive Design'],
+    'card_tags': ['UI Design', 'Web Development'],
+    'links': { "github": "https://github.com/kellytan5/amiyokai-theme" },
+    'exhibition': [
+      { 'link': "/project_content/amiyokai_wp/front_page.png", 'caption_title': "Front Page", 'caption': "A welcoming landing page introducing the AmiYoKai brand, featuring featured products, brand messaging, and quick navigation to key sections of the site."},
+      { 'link': "/project_content/amiyokai_wp/products.png", 'caption_title': "Products Page", 'caption': "A responsive product grid designed to showcase handmade crochet items clearly and consistently while maintaining the brand’s playful aesthetic."},
+      { 'link': "/project_content/amiyokai_wp/blog.png", 'caption_title': "Blog Page", 'caption': "A clean blog layout built to support content sharing, updates, and storytelling while keeping navigation simple and approachable."},
+      { 'link': "/project_content/amiyokai_wp/wireframes.png", 'caption_title': "Planning & Wireframing", 'caption': "Rough digital sketches created during the early planning process to map out layouts and key sections of the website."}
+    ],
+  },
+  {
+    'id': 3,
     'title': 'Portfolio', 
     'overview': 'To create a portfolio that reflects my visual style while demonstrating front-end architecture and basic back-end integration.',
     'problem': 'I wanted a portfolio that stood out visually while remaining readable and maintainable, without overengineering the back-end.',
@@ -32,16 +53,17 @@ PROJECTS = [
     'card_tags': ['UI Design', 'Web Development'],
     'links': { 
       'figma': 'https://www.figma.com/design/zAHLw30PSvTrp4p9SLwJVk/Rabbithole-Design?node-id=0-1&t=TtFKOBSTE4wPaRg3-1', 
-      'github': 'https://github.com/kellytan5/Portfolio-MyRabbitHole' 
+      'github': 'https://github.com/kellytan5/Portfolio-MyRabbitHole', 
+      'live': 'https://portfolio-kellytan.pages.dev/'
     },
     'exhibition': [ 
-      "/project_content/portfolio/chatbotdemo.mp4",
-      "/project_content/portfolio/navdemo.mp4",
-      "https://embed.figma.com/design/zAHLw30PSvTrp4p9SLwJVk/Rabbithole-Design?node-id=0-1&embed-host=share"
+      { 'link': "/project_content/portfolio/chatbotdemo.mp4", 'caption_title': "Chatbot Demo", 'caption': "Demonstration of the integrated chatbot experience designed to create a more interactive and personalized portfolio." },
+      { 'link': "/project_content/portfolio/navdemo.mp4", 'caption_title': "Navigation Demo", 'caption': "" },
+      { 'link': "https://embed.figma.com/design/zAHLw30PSvTrp4p9SLwJVk/Rabbithole-Design?node-id=0-1&embed-host=share", 'caption_title': "Figma Design Exploration", 'caption': "" }
     ],
   },
   {
-    'id': 3,
+    'id': 4,
     'title': 'Local Business Directory Application', 
     'overview': 'This project focused on improving application reliability through structured manual testing as part of a small academic team. Rather than building features, my role centred on identifying defects and clearly documenting them.',
     'problem': 'The application required testing to ensure core functionality worked as expected; however, no structured testing process was in place during early development.',
@@ -54,13 +76,13 @@ PROJECTS = [
     'card_tags': ['Quality Assurance'],
     'links': {},
     'exhibition': [ 
-      "/project_content/business_directory/TestCase13.pdf",
-      "/project_content/business_directory/TestCase15.pdf",
-      "/project_content/business_directory/TestCase16.pdf" 
+      { 'link': "/project_content/business_directory/TestCase13.pdf", 'caption_title': "MB_013:", 'caption': "Test case for freelancer signup — user registers as a bee, enters business info and skills, and uploads a company logo. All steps passed." },
+      { 'link': "/project_content/business_directory/TestCase15.pdf", 'caption_title': "MB_015:", 'caption': "Test case for business creating a customer order via chat. Failed — order ID returned blank with a sessionId type error on submission." },
+      { 'link': "/project_content/business_directory/TestCase16.pdf", 'caption_title': "MB_016:", 'caption': "Test case for user accepting a business order — navigates to orders, selects it, and completes payment. All steps passed." } 
     ],
   }, 
   {
-    'id': 4,
+    'id': 5,
     'title': 'Pinecone', 
     'overview': 'A university group project exploring LiDAR data processing concepts. My contribution focused on supporting the design phase by creating technical diagrams and documentation.',
     'problem': 'The team needed a clear shared understanding of a complex system involving LiDAR data processing, but the initial requirements and system structure were difficult to visualize.',
@@ -73,9 +95,9 @@ PROJECTS = [
     'card_tags': ['University Project', 'Documentation', 'System Design'],
     'links': {},
     'exhibition': [
-      "/project_content/pinecone/usecase.png", 
-      "/project_content/pinecone/sequence_0.png",
-      "/project_content/pinecone/sequence_1.png"
+      { 'link': "/project_content/pinecone/usecase.png", 'caption_title': "Use Case Diagram", 'caption': "Visualized user interactions and core system functionality to help define project scope and system behavior." }, 
+      { 'link': "/project_content/pinecone/sequence_0.png", 'caption_title': "Sequence Diagram - Preprocessing Files", 'caption': "Mapped the preprocessing flow — ground segmentation, isolation forest outlier removal, and largest cluster extraction before returning status to the UI." },
+      { 'link': "/project_content/pinecone/sequence_1.png", 'caption_title': "Activity Diagram - Cleaning Files", 'caption': "Mapped the cleaning flow — loops through coordinate extraction, statistical and radius outlier removal, and downsampling until cleaning is complete." }
     ],
   },
   # {
