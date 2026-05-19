@@ -20,7 +20,10 @@ export default {
 			// try to return cached response first 
 			let response = await cache.match(request);
 
-			if (!response) {
+			if (response) {
+			  // Clone cached response before modifying headers
+			  response = new Response(response.body, response);
+			} else {
 				try {
 				const renderUrl = `https://portfolio-ywk1.onrender.com${url.pathname}`;
 
