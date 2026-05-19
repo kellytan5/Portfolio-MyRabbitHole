@@ -3,7 +3,7 @@
 # 🔗 Live Portfolio
 
 You can view the live version of my portfolio here:  
-👉 [**The Rabbithole Design**](https://kellytan-portfolio.vercel.app/)
+👉 [**The Live Page**](https://portfolio-kellytan.pages.dev/)
 
 # Introduction 
 ## Description 
